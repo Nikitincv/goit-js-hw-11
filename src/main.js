@@ -2,6 +2,8 @@ import iziToast from 'izitoast';
 import 'modern-normalize/modern-normalize.css';
 import 'izitoast/dist/css/iziToast.min.css';
 
+
+
 import { getPhotos } from './js/pixabay-api';
 import { createMarkup } from './js/render-functions';
 
@@ -27,8 +29,7 @@ function formSubmit(evt) {
   }
   loader.classList.remove('isheaden');
 
-  getPhotos(trimedValue)
-    .then(data => {
+  getPhotos(trimedValue).then(data => {
       if (data.hits.length === 0) {
         return iziToast.warning({
           message:
